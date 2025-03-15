@@ -1,0 +1,158 @@
+/* Corpo principale */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Jersey 15', sans-serif; /* Font Jersey 15 */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1a1a1a, #2c2c2c, #444444, #1a1a1a); /* Sfumature statiche */
+    background-size: cover; /* Copre l'intera area */
+    background-attachment: fixed; /* Sfondo fisso */
+}
+
+/* Contenitore principale */
+.container {
+    position: relative;
+    z-index: 2; /* Mantiene il contenuto sopra le particelle */
+    background-color: rgba(18, 18, 18, 0.8); /* Assicura trasparenza per vedere le particelle */
+    pointer-events: none; /* Se possibile, evita che blocchi i clic */
+}
+
+
+
+
+/* Menu */
+.menu {
+    position: relative; /* Necessario per il posizionamento del dropdown */
+    background-color: transparent;
+    padding: 10px;
+    text-align: center;
+    pointer-events: auto; /* Permette il click */
+}
+
+/* Pulsante del menu */
+.menu-button {
+    background-color: white; /* Colore bianco per il pulsante */
+    border: none;
+    color: black; /* Colore del testo */
+    font-size: 1.5em;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-family: 'Jersey 15', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    pointer-events: auto; /* Permette il click */
+}
+
+.menu-button:hover {
+    background-color: #f0f0f0; /* Colore più chiaro al passaggio del mouse */
+    color: #000; /* Testo sempre visibile */
+    pointer-events: auto; /* Permette il click */
+}
+
+/* Contenuto del dropdown */
+.dropdown-content {
+    display: none; /* Nascondi inizialmente */
+    position: absolute;
+    top: 100%; /* Mostra il menu subito sotto il pulsante */
+    left: 50%;
+    width: 50%; /* Larghezza del menu */
+    transform: translateX(-50%);
+    background-color: #ffffff; /* Sfondo bianco per il menu */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombra */
+    z-index: 10;
+    border-radius: 0 0 8px 8px;
+    text-align: center; /* Allinea le voci */
+}
+
+.dropdown-content a {
+    display: block;
+    color: black; /* Testo nero */
+    text-decoration: none;
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    font-family: 'Jersey 15', sans-serif;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #f0f0f0; /* Sfondo chiaro al passaggio del mouse */
+}
+
+/* Mostra il menu quando aperto */
+.menu.open .dropdown-content {
+    display: block;
+}
+
+/* Contenuto principale */
+.content {
+    padding: 20px;
+    overflow-y: auto;
+    height: calc(100vh - 60px); /* Riduci altezza del menu */
+}
+
+/* Titolo */
+header h1 {
+    font-family: 'Jersey 15', sans-serif;
+    font-size: 3em;
+    text-align: center;
+    color: #FF69B4; /* Rosa acceso */
+    margin-bottom: 20px;
+}
+
+.scrollable-content {
+    width: 80%; /* Imposta una larghezza maggiore */
+    max-width: 900px; /* Massima larghezza su schermi grandi */
+    margin: 0 auto; /* Centra il contenitore */
+    padding: 20px;
+}
+
+/* Sezioni scorrevoli */
+.scrollable-content h2 {
+    font-family: 'Jersey 15', sans-serif;
+    font-size: 1.5em;
+    color: #FF69B4;
+}
+
+.card {
+    background-color: #1E1E1E;
+    border: 2px solid white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+    font-family: 'Jersey 15', sans-serif;
+}
+
+.card p {
+    margin: 0 0 10px;
+    line-height: 1.5;
+    color: #E0E0E0;
+    font-family: 'Jersey 15', sans-serif;
+}
+
+.card a {
+    color: #FF69B4;
+    text-decoration: none;
+    font-family: 'Jersey 15', sans-serif;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+/* Contenitore per Particles.js */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Porta le particelle sopra lo sfondo, ma dietro il contenuto */
+    background-color: #121212;
+    pointer-events: auto; /* Assicura che riceva i clic */
+}
+
+
+

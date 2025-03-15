@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Bio - PIENA</title>
+</head>
+<body>
+    <!-- Contenitore per Particles.js -->
+    <div id="particles-js"></div>
+
+    <!-- Contenitore principale -->
+    <div class="container">
+        <!-- Menu -->
+        <div class="menu">
+            <button id="menu-button" class="menu-button">MENU &#9776;</button>
+            <div class="dropdown-content">
+                <a href="{{ url_for('bio') }}">Bio</a>
+                <a href="{{ url_for('works') }}">Works</a>
+                <a href="{{ url_for('lives') }}">Lives</a>
+                <a href="{{ url_for('photos') }}">Photos</a>
+                <a href="{{ url_for('instagram') }}">Instagram</a>
+                <a href="{{ url_for('spotify') }}">Spotify</a>
+            </div>
+        </div>
+
+        <!-- Contenuto principale -->
+        <div class="content">
+            <header>
+                <h1>Bio</h1>
+            </header>
+            <div class="scrollable-content">
+                <p>Pagina vuota per ora...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio -->
+    <audio id="background-audio" src="{{ url_for('static', filename='audio/mysound.mp3') }}"></audio>
+
+    <!-- Script -->
+    <script src="{{ url_for('static', filename='js/particles.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/particles-config.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/menu.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/audio.js') }}"></script>
+</body>
+</html>
